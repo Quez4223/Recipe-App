@@ -10,7 +10,7 @@ const recipes = require('./models/recipe');
 // Routes
 // Index
 APP.get('/recipe', (req, res) => {
-    res.send(recipes)
+    res.render('index.ejs')
 })
 
 
