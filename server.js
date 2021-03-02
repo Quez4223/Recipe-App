@@ -7,16 +7,26 @@ const PORT = 3000;
 const recipes = require('./models/recipe');
 
 
-// Routes
-// Index
+// ROUTES
+// INDEX
 APP.get('/recipe', (req, res) => {
     res.render('index.ejs')
-})
+});
+
+// NEW
+APP.get('/recipe/new', (req, res) => {
+    res.render('new.ejs')
+});
 
 
 
 
 
+
+
+
+
+// LISTENER
 APP.listen(PORT, () => {
     console.log(`listening at ${PORT}`)
-})
+});
