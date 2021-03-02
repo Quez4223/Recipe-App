@@ -10,12 +10,21 @@ const recipes = require('./models/recipe');
 // ROUTES
 // INDEX
 APP.get('/recipe', (req, res) => {
-    res.render('index.ejs')
+    res.render('index.ejs', {
+        allRecipes: recipes
+    });
 });
 
 // NEW
 APP.get('/recipe/new', (req, res) => {
     res.render('new.ejs')
+});
+
+
+APP.get('/recipe/:id', (req,res) => {
+    res.render('show.ejs', {
+        recipe: recipes[req.params.id]
+    });
 });
 
 

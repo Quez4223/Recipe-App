@@ -8,5 +8,16 @@
 </head>
 <body>
    <h1>Collection</h1> 
+
+   <p><a href="/recipe/new">Add new recipe</a></p>
+
+   <% for (let i = 0; i < allRecipes.length; i++) { %>
+    <li>
+        <a href="/recipe/<%= i %>">
+            <%= allRecipes[i].name %>
+        </a>
+    </li>
+
+   <% } %>
 </body>
 </html>
