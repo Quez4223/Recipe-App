@@ -7,6 +7,9 @@ const mongoose = require('mongoose')
 
 
 // CONFIG
+require('dotenv').config()
+
+
 const APP = express();
 const PORT = 3000;
 
@@ -17,18 +20,13 @@ APP.use(express.urlencoded({ extended: true }));
 
 
 
-// DATABASE
-mongoose.connect(
-    mongodbURI,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false   
-    },
-   () => {
-       console.log('the connection with mongod is established at', mongodbURI)
-   } 
-)
+//DATABASE
+mongoose.connect('mongodb://localhost:27017/recipe', { useNewUrlParser: true}, {useUnifiedTopology: true })
+
+mongoose.connection.once('open', () => {
+    console.log('connected to mongo')
+})
+
 
 
 // CONTROLLERS
@@ -36,33 +34,14 @@ const recipesController = require('./controllers/recipe_controller.js')
 APP.use('/recipe', recipesController)
 
 
-// ROUTES
-// INDEX
-APP.get('/recipe', (req, res) => {
-    res.render('index.ejs', {
-        allRecipes: recipes
-    });
-});
-
-// NEW
-APP.get('/recipe/new', (req, res) => {
-    res.render('new.ejs')
-});
-
-
-// CREATE
-APP.post('/recipe', (req, res) => {
-    res.send(req.body)
-})
 
 
 
-// SHOW
-APP.get('/recipe/:id', (req,res) => {
-    res.render('show.ejs', {
-        recipe: recipes[req.params.id]
-    });
-});
+
+
+
+
+
 
 
 
