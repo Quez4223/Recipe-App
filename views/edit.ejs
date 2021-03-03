@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recipe New Page</h1>
+    <form action="/recipe/<%=recipe.id%>?_method=PUT" method="POST">
+       <label for="name">Name:</label>
+       <input type="text" name="name" value="<%=recipe.name%>">
+       <label for="ingredients">Ingredients</label>
+       <input type="text" name="ingredients" value="<%=recipe.ingredients%>">
+       <label for="directions">Directions</label>
+       <input type="text" name="directions" value="<%=recipe.directions%>"> 
+       <br>
+       <input type="submit" value="submit">
+    </form>
+    <br>
+    <button type="button" name="button">
+        <a href="/recipe">Back</a>
+    </button>
+</body>
+</html>

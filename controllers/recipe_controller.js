@@ -38,8 +38,8 @@ recipes.get('/setup/seed', (req, res) => {
         [
             {
                 name: 'Pasta Aglio e Olio',
-                ingredients: 'pasta, parsley, olive oil , garlic, red pepper flakes, lemon',
-                directions: 'Salt large pot of water, bring to a boil. Cook pasta until almost done. Slice garlic cloves thinly and put aside. Heat olive oil.'  
+                ingredients: 'pasta, parsley, olive oil , 2 cloves garlic, 1 teaspoon red pepper flakes, 1/2 lemon',
+                directions: 'Salt large pot of water, bring to a boil. Cook pasta until almost done. Slice garlic cloves thinly and put aside. Chop parsley. Heat olive oil in large saute pan over medium heat. Add garlic stirring constantly, until softened and slightly golden around the edges. Add the red pepper flakes and lower the heat to medium-low. Add pasta, drained, saving some pasta cooking water. Squeeze lemon juice over top and, mix pasta with fresh parsley. Season with salt and pepper. If sauce is too watery, cook for additional 1-3 minutes. '  
             },
             {
                 name: 'Hawaiian BBQ Quesadilla',
