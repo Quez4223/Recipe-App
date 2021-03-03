@@ -3,43 +3,8 @@ const Recipe = require('../models/recipe.js')
 const recipes = express.Router()
 
 
-
-
-// INDEX
-recipes.get('/', (req, res) => {
-    Recipe.find({}, (error, recipes) => {
-        res.render('index.ejs', {
-            allRecipes: recipes
-        });
-    })
-    
-});
-
-// NEW
-recipes.get('/recipe/new', (req, res) => {
-    res.render('recipe/new.ejs')
-});
-
-
-// DELETE
-recipes.delete('/:id', (req, res) => {
-    Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
-        res.redirect('/recipe')
-    });
-});
-
-// SHOW
-recipes.get('/recipe/:id', (req,res) => {
-    res.render('recipe/show.ejs', {
-        recipe: recipes[req.params.id]
-    });
-});
-
-
-
-
 // SEED ROUTE
-recipes.get('/setup/seed', (req, res) => {
+recipes.get('/seed', (req, res) => {
     Recipe.create(
         [
             {
@@ -57,9 +22,46 @@ recipes.get('/setup/seed', (req, res) => {
                 ingredients: '4 thick slices of challah bread, 2 large eggs, 3/4 cup of milk, 1/2 teaspoon vanilla extract, 1/2 teaspoon ground cinnamon, 2 1/2 tablespoons unsalted butter, 1/3 cup powdered sugar, 8 ounces cream cheese, 1 teaspoon of sugar, fresh fruit( strawberries, banana)',
                 directions: 'Beat together cream cheese, powdered sugar, and vanilla until you have a spreadable mixture. Spread a thick layer of cream cheese filling on one side of bread. Top with the other bread making a sandwich. Set aside. In a small bowl whisk together eggs, milk and cinnamon and sugar. Heat medium skillet or griddle over a medium heat. Melt the butter. Dip the sandwiches into the egg mixture until fully coated. Cook sandwiches on both sides until golden brown on both sides. Top with strawberries and banana and a sprinkle of powdered sugar. Whipped cream is optional'
             }
-        ]
+        ], (error, recipes) =>{
+            res.send(recipes)
+        }
     )
 });
+
+// INDEX
+recipes.get('/', (req, res) => {
+    Recipe.find({}, (error, recipes) => {
+        res.render('index.ejs', {
+            allRecipes: recipes
+        });
+    })
+    
+});
+
+// // NEW
+// recipes.get('/recipe/new', (req, res) => {
+//     res.render('recipe/new.ejs')
+// });
+
+
+// // DELETE
+// recipes.delete('/:id', (req, res) => {
+//     Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
+//         res.redirect('/recipe')
+//     });
+// });
+
+// // SHOW
+// recipes.get('/recipe/:id', (req,res) => {
+//     res.render('recipe/show.ejs', {
+//         recipe: recipes[req.params.id]
+//     });
+// });
+
+
+
+
+
 
 
 
