@@ -8,20 +8,22 @@ const mongoose = require('mongoose')
 
 // CONFIG
 require('dotenv').config()
-
+const MONGODB_URI = process.env.MONGODB_URI
 
 const APP = express();
 const PORT = 3000;
+const db = mongoose.connection;
 
 
 // MIDDLEWARE
 APP.use(methodOverride('_method'));
 APP.use(express.urlencoded({ extended: true }));
+APP.use(express.json());
 
 
 
 //DATABASE
-mongoose.connect('mongodb://localhost:27017/recipe', { useNewUrlParser: true}, {useUnifiedTopology: true })
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true}, {useUnifiedTopology: true })
 
 mongoose.connection.once('open', () => {
     console.log('connected to mongo')
@@ -36,7 +38,11 @@ APP.use('/recipe', recipesController)
 
 
 
-
+// ROUTE
+// localhost:3000
+APP.get('/', (req, res) => {
+    res.send('Hello World')
+});
 
 
 
