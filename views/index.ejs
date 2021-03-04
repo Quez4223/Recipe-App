@@ -8,18 +8,22 @@
     <title>Dad's Simple Kitchen</title>
 </head>
 <body>
-   <h1>Meals</h1> 
-
-   <p><a href="/recipe/new">Add new recipe</a></p>
+    <div>
+        <h1>Meals</h1> 
+        <br>
+        <button><a href="/recipe/new">Add new recipe</a></button>
 
    <% for (let i = 0; i < allRecipes.length; i++) { %>
     <li>
         <a href="/recipe/<%= allRecipes[i].id %>">
             <%= allRecipes[i].name %>
-            <img src="allRecipes.image" alt="">
+            <img src="<%= allRecipes[i].image %>">
         </a>
     </li>
 
    <% } %>
+
+    </div>
+   
 </body>
 </html>
