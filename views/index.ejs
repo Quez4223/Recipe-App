@@ -12,8 +12,8 @@
         <h1>Simple Meals</h1> 
         <br>
         <button><a href="/recipe/new">Add new recipe</a></button>
-
-   <% for (let i = 0; i < allRecipes.length; i++) { %>
+        <br>
+        <% for (let i = 0; i < allRecipes.length; i++) { %>
     <li>
         <a href="/recipe/<%= allRecipes[i].id %>">
             <%= allRecipes[i].name %>
@@ -21,8 +21,8 @@
         </a>
     </li>
    <% } %>
-
-    </div>
-   
+</div>
+<button id="home"><a href="/">Back to Homepage</a> 
+</button>
 </body>
 </html>
