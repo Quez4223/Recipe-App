@@ -56,9 +56,9 @@ recipes.get('/new', (req, res) => {
 
 // SHOW
 recipes.get('/:id', (req,res) => {
-    Recipe.findById({}, (error, recipes) => {
-        res.render('recipe/show.ejs', {
-            recipe: recipes[req.params.id]
+    Recipe.findById(req.params.id, (error, recipe) => {
+        res.render('show.ejs', {
+            recipe: recipe
         });
     })
     
