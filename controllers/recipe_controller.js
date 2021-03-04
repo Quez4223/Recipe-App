@@ -43,7 +43,7 @@ recipes.get('/', (req, res) => {
 
 // NEW
 recipes.get('/new', (req, res) => {
-    res.render('recipe/new.ejs')
+    res.render('new.ejs')
 });
 
 
@@ -54,12 +54,15 @@ recipes.get('/new', (req, res) => {
 //     });
 // });
 
-// // SHOW
-// recipes.get('/recipe/:id', (req,res) => {
-//     res.render('recipe/show.ejs', {
-//         recipe: recipes[req.params.id]
-//     });
-// });
+// SHOW
+recipes.get('/:id', (req,res) => {
+    Recipe.findById({}, (error, recipes) => {
+        res.render('recipe/show.ejs', {
+            recipe: recipes[req.params.id]
+        });
+    })
+    
+});
 
 
 
