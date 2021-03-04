@@ -56,12 +56,12 @@ recipes.get('/id:edit', (req, res) => {
 });
 
 
-// // DELETE
-// recipes.delete('/:id', (req, res) => {
-//     Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
-//         res.redirect('/recipe')
-//     });
-// });
+// DELETE
+recipes.delete('/:id', (req, res) => {
+    Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
+        res.redirect('/recipe')
+    });
+});
 
 
 // Create
@@ -80,6 +80,17 @@ recipes.get('/:id', (req,res) => {
     })
     
 });
+
+// UPDATE
+recipes.put('/:id', (req, res) => {
+    Recipe.findByIdAndUpdate(req.params.id, 
+        req.body, 
+        { new: true},
+        (error, updatedRecipe) => {
+            res.redirect('/recipe')
+        }
+    )
+})
 
 
 
