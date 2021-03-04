@@ -46,6 +46,15 @@ recipes.get('/new', (req, res) => {
     res.render('new.ejs')
 });
 
+// EDIT
+recipes.get('/id:edit', (req, res) => {
+    Recipe.findById(req.params.id, (error, foundRecipe) => {
+        res.render('edit.ejs', {
+            recipe: foundRecipe
+        });
+    });
+});
+
 
 // // DELETE
 // recipes.delete('/:id', (req, res) => {
@@ -53,6 +62,14 @@ recipes.get('/new', (req, res) => {
 //         res.redirect('/recipe')
 //     });
 // });
+
+
+// Create
+recipes.post('/', (req, res) => {
+    Recipe.create(req.body, (error, createdRecipe) => {
+        res.redirect('/recipe')
+    });
+});
 
 // SHOW
 recipes.get('/:id', (req,res) => {

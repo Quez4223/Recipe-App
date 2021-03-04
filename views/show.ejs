@@ -9,14 +9,15 @@
 <body>
     <h2><%=recipe.name%></h2>
 
-    <h3>INGREDIENTS</h3>
+    <h3>Ingredients:</h3>
     <ul>
         <li>
             <%= recipe.ingredients %>
+            <br>
+            <h3>Directions:</h3>
             <%= recipe.directions %>
         </li>
     </ul>
-
     <a href="/recipe">Back to Collection</a>
 </body>
 </html>
