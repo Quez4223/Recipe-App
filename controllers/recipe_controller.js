@@ -90,7 +90,7 @@ recipes.put('/:id', (req, res) => {
             res.redirect('/recipe')
         }
     )
-})
+});
 
 
 
