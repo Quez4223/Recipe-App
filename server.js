@@ -41,7 +41,7 @@ APP.use('/recipe', recipesController)
 // ROUTE
 // localhost:3000
 APP.get('/', (req, res) => {
-    res.send('Hello World')
+    res.render('home.ejs')
 });
 
 
