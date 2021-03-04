@@ -47,7 +47,7 @@ recipes.get('/new', (req, res) => {
 });
 
 // EDIT
-recipes.get('/id:edit', (req, res) => {
+recipes.get('/:id/edit', (req, res) => {
     Recipe.findById(req.params.id, (error, foundRecipe) => {
         res.render('edit.ejs', {
             recipe: foundRecipe
