@@ -66,7 +66,9 @@ recipes.delete('/:id', (req, res) => {
 
 // Create
 recipes.post('/', (req, res) => {
+    console.log(req.body)
     Recipe.create(req.body, (error, createdRecipe) => {
+        console.log(error)
         res.redirect('/recipe')
     });
 });
