@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <title>Dad's Simple Kitchen</title>
 </head>
 <body>
     <div>
         <h1>Simple Meals</h1> 
         <br>
-        <button><a href="/recipe/new">Add new recipe</a></button>
+        <button class="button button-outline"><a href="/recipe/new">Add new recipe</a></button>
         <br>
         <% for (let i = 0; i < allRecipes.length; i++) { %>
     <li>
@@ -22,7 +25,6 @@
     </li>
    <% } %>
 </div>
-<button id="home"><a href="/">Back to Homepage</a> 
-</button>
+<button class="button button-outline"><a href="/">Back to Homepage</a></button>
 </body>
 </html>
