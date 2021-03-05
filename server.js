@@ -16,6 +16,7 @@ const db = mongoose.connection;
 
 
 // MIDDLEWARE
+APP.use(express.static('public'));
 APP.use(methodOverride('_method'));
 APP.use(express.urlencoded({ extended: true }));
 APP.use(express.json());
