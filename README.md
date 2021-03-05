@@ -6,7 +6,7 @@ Approach: I took the idea of making a blog into a helpful site for people with l
 
 Unsolved Problems: Pictures added are not sized properly. Need to find a way fix that issue. And styling needs work as well. Maybe a little more color and some some nice borders.
 
-// Notes to self for later update: Add signup and login feature. Add categories such as Breakfast, Lunch, Dinner, Snacks, Drinks and Desserts. Fix photo sizes to make them all even. Have edit page return to actual page of edited item instead of index page. 
+// Notes to self for later update: Add signup and login feature. Add categories such as Breakfast, Lunch, Dinner, Snacks, Drinks and Desserts. Fix photo sizes to make them all even. Have edit page return to actual page of edited item instead of index page. Add cook and prep times. Add Partials. 
 
 
 https://thawing-bastion-36846.herokuapp.com/
